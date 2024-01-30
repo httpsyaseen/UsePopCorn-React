@@ -9,10 +9,15 @@ const containerStyle = {
 const startContainer = {
   display: "flex",
   alignItems: "center",
-  gap: "16px",
+  gap: "3px",
 };
 
-const StarRating = ({ numrating = 5, color = "#fcc019", size = 48 }) => {
+const StarRating = ({
+  numrating = 5,
+  color = "#fcc019",
+  size = 48,
+  onSetRating = 0,
+}) => {
   const textStyle = {
     color,
     lineHeight: "1",
@@ -24,6 +29,7 @@ const StarRating = ({ numrating = 5, color = "#fcc019", size = 48 }) => {
 
   function handleRating(ratings) {
     setRating(ratings);
+    onSetRating(ratings);
   }
 
   function handleHoverIn(rating) {
